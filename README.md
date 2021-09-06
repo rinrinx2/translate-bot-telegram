@@ -11,7 +11,7 @@
 # Windows 
 >How To Install In Windows
 
-|  Windows| Links |
+| Install For Windows| Links |
 |--------|--------|
 | **Nodejs** |[Click Here](https://nodejs.org/en/download) |
 | **Git** | [Click Here](https://git-scm.com/download/win) |
