@@ -47,7 +47,7 @@ npm start
 ```
 
 # Contact Me
->Please Ask :)
+>Want to ask questions?
 <p align="left">
   <a href="https://wa.me/6283183586629" alt="WhatsApp">
   <img src="https://img.shields.io/badge/-WhatsApp-25d366?style=flat-square&labelColor=25d366&logo=whatsapp&logoColor=white&link=https://wa.me/6283183586629"/></a>
