@@ -29,6 +29,10 @@ $ apt install nodejs
 $ git clone https://github.com/Franky404/translate-bot-telegram
 $ npm i
 ```
+# Heroku
+>How to Run On Heroku
+```
+```
 # How To Run
 >Running Script
 ```
