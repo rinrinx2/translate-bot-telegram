@@ -4,6 +4,7 @@
 */
 //==============================================//
 // settings 
+const fs = require('fs');
 const config = JSON.parse(fs.readFileSync('./config.json'));
 // Module
 const Telegraf = require('telegraf');
@@ -18,12 +19,12 @@ bot.start(ctx => ctx.reply('Welcome'));
 bot.command('from', ctx => {
   const lang = ctx.message.text.substring(6);
   if (lang.length > 2 || lang.length === 1) {
-    ctx.reply('” language code must be 2 chars, e.g. "en" or "fr"');
+    ctx.reply('â€ language code must be 2 chars, e.g. "en" or "fr"');
     return;
   }
   ctx.session.from = lang;
   ctx.reply(
-    lang ? '… "from" language set to ' + lang : 'âœ… autodetect "from" language'
+    lang ? 'â€¦ "from" language set to ' + lang : 'Ã¢Å“â€¦ autodetect "from" language'
   );
 });
 // set language to
@@ -31,16 +32,16 @@ bot.command('to', ctx => {
   const lang = ctx.message.text.substring(4);
   if (lang.length === 0) {
     ctx.reply(
-      '” please specify a language code! It must be 2 chars, e.g. "en" or "id"'
+      'â€ please specify a language code! It must be 2 chars, e.g. "en" or "id"'
     );
     return;
   }
   if (lang.length > 2 || lang.length === 1) {
-    ctx.reply('” language code must be 2 chars, e.g. "en" or "id"');
+    ctx.reply('â€ language code must be 2 chars, e.g. "en" or "id"');
     return;
   }
   ctx.session.to = lang;
-  ctx.reply('… "to" language set to ' + lang);
+  ctx.reply('â€¦ "to" language set to ' + lang);
 });
 bot.command('history', ctx => {
   try {
@@ -56,15 +57,15 @@ bot.command('history', ctx => {
 // clear session
 bot.command('clear', ctx => {
   ctx.session.messages = JSON.stringify([]);
-  ctx.reply('… History Berhasil Di Hapus!');
+  ctx.reply('â€¦ History Berhasil Di Hapus!');
 });
 bot.command('dnt', ctx => {
   ctx.session.dnt = true;
-  ctx.reply('… Tidak Acak');
+  ctx.reply('â€¦ Tidak Acak');
 });
 bot.command('dt', ctx => {
   ctx.session.dnt = false;
-  ctx.reply('… Acak');
+  ctx.reply('â€¦ Acak');
 });
 // message 
 bot.on('message', ctx => {
