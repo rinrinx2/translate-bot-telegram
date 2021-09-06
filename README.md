@@ -38,6 +38,7 @@ npm start
 >How to Edit Bot Token
 
 • Edit Your Token [`Edit Token`](https://github.com/Franky404/translate-bot-telegram/blob/aa33131306947358006faa258fc1eb07ca1eabc0/config.json#L2)
+
 • Generating Bot Tokens[`@Botfather`](https://t.me/botfather)
 ```json
 { 
