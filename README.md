@@ -30,9 +30,9 @@ $ git clone https://github.com/Franky404/translate-bot-telegram
 $ npm i
 ```
 # Heroku
->How to Run On Heroku
-```
-```
+>Deploy To Heroku
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Franky404/translate-bot-telegram)
+
 # How To Run
 >Running Script
 ```
