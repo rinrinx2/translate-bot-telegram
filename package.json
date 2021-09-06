@@ -9,11 +9,7 @@
   "author": "Franky404",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.21.3",
     "@vitalets/google-translate-api": "^7.0.0",
-    "node-telegram-bot-api": "^0.54.0",
-    "fs-extra": "^10.0.0",
-    "telegraf": "^4.3.0",
-    "telegraf-session-local": "2.1.0"
+    "telegraf": "^4.3.0"
   }
 }
