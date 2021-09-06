@@ -11,6 +11,7 @@ const { Telegraf } = require('telegraf');
 const  LocalSession  = require('telegraf-session-local');
 const bot = new Telegraf(config.TELEGRAM_BOT_TOKEN);
 const axios = require('axios');
+const translate = require('@vitalets/google-translate-api')
 // session
 bot.use(new LocalSession({ database: '.data/session.json' }).middleware());
 // start
@@ -72,16 +73,8 @@ bot.on('message', ctx => {
   const lang =
     (ctx.session.from ? ctx.session.from + '-' : '') + (ctx.session.to || 'en');
   console.log(lang);
-  axios
-    .get('https://translate.yandex.net/api/v1.5/tr.json/translate', {
-      params: {
-        key: config.YANDEX_API_KEY,
-        text: ctx.message.text,
-        lang: lang
-      }
-    })
-    .then(res => {
-      const translation = res.data.text[0];
+translate(`${ctx.message.text}`,{to:`${lang}`).then( res => {
+     const translation = res.text
       ctx.reply(translation);
       if (ctx.session.dnt === true) {
         return;
