@@ -12,14 +12,14 @@ const LocalSession = require('telegraf-session-local');
 const bot = new Telegraf(config.TELEGRAM_BOT_TOKEN);
 const axios = require('axios');
 // session
-bot.use(new LocalSession({ database: 'session.json' }).middleware());
+bot.use(new LocalSession({ database: './session.json' }).middleware());
 // start
 bot.start(ctx => ctx.reply('Welcome'));
 // set language from
 bot.command('from', ctx => {
   const lang = ctx.message.text.substring(6);
   if (lang.length > 2 || lang.length === 1) {
-    ctx.reply('🤔” language code must be 2 chars, e.g. "en" or "fr"');
+    ctx.reply('🤔” language code must be 2 chars, e.g. "en" or "id"');
     return;
   }
   ctx.session.from = lang;
