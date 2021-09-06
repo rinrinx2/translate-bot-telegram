@@ -8,7 +8,7 @@ const fs = require('fs-extra');
 const config = JSON.parse(fs.readFileSync('./config.json'));
 // Module
 const { Telegraf } = require('telegraf');
-const LocalSession = require('telegraf-session-local');
+const { LocalSession } = require('telegraf-session-local');
 const bot = new Telegraf(config.TELEGRAM_BOT_TOKEN);
 const axios = require('axios');
 // session
@@ -24,7 +24,7 @@ bot.command('from', ctx => {
   }
   ctx.session.from = lang;
   ctx.reply(
-    lang ? '✔️… "from" language set to ' + lang : 'âœ… autodetect "from" language'
+    lang ? '✔️… "from" language set to ' + lang : '✔️… autodetect "from" language'
   );
 });
 // set language to
