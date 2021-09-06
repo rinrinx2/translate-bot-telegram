@@ -7,7 +7,7 @@
 const fs = require('fs');
 const config = JSON.parse(fs.readFileSync('./config.json'));
 // Module
-const Telegraf = require('telegraf');
+const Telegraf = require('telegraf')
 const LocalSession = require('telegraf-session-local');
 const bot = new Telegraf(config.TELEGRAM_BOT_TOKEN);
 const axios = require('axios');
