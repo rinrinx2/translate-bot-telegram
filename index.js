@@ -15,64 +15,10 @@ const translate = require('@vitalets/google-translate-api')
 // session
 bot.use(new LocalSession({ database: '.data/session.json' }).middleware());
 // start
-bot.start(ctx => ctx.reply('Welcome'));
-// set language from
-bot.command('from', ctx => {
-  const lang = ctx.message.text.substring(6);
-  if (lang.length > 2 || lang.length === 1) {
-    ctx.reply('🤔” language code must be 2 chars, e.g. "en" or "id"');
-    return;
-  }
-  ctx.session.from = lang;
-  ctx.reply(
-    lang ? '✔️… "from" language set to ' + lang : '✔️… autodetect "from" language'
-  );
-});
-// set language to
-bot.command('to', ctx => {
-  const lang = ctx.message.text.substring(4);
-  if (lang.length === 0) {
-    ctx.reply(
-      '🤔” please specify a language code! It must be 2 chars, e.g. "en" or "id"'
-    );
-    return;
-  }
-  if (lang.length > 2 || lang.length === 1) {
-    ctx.reply('🤔” language code must be 2 chars, e.g. "en" or "id"');
-    return;
-  }
-  ctx.session.to = lang;
-  ctx.reply('✔️… "to" language set to ' + lang);
-});
-bot.command('history', ctx => {
-  try {
-    ctx.reply(
-      JSON.parse(ctx.session.messages)
-        .map(message => `${message.text}: ${message.translation}`)
-        .join('\n')
-    );
-  } catch (err) {
-    console.error(err);
-  }
-});
-// clear session
-bot.command('clear', ctx => {
-  ctx.session.messages = JSON.stringify([]);
-  ctx.reply('✔️… History Berhasil Di Hapus!');
-});
-bot.command('dnt', ctx => {
-  ctx.session.dnt = true;
-  ctx.reply('✔️… Tidak Acak');
-});
-bot.command('dt', ctx => {
-  ctx.session.dnt = false;
-  ctx.reply('✔️… Acak');
-});
+bot.start(ctx => ctx.reply('Welcome👋🏻'));
 // message 
 bot.on('message', ctx => {
-  const lang =
-    (ctx.session.from ? ctx.session.from + '-' : '') + (ctx.session.to || 'en');
-  console.log(lang);
+const lang = 'en'
 translate(`${ctx.message.text}`,{to:`${lang}`}).then( res => {
      const translation = res.text
       ctx.reply(translation);
