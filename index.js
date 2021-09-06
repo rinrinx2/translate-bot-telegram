@@ -4,7 +4,7 @@
 */
 //==============================================//
 // settings 
-const fs = require('fs');
+const fs = require('fs-extra');
 const config = JSON.parse(fs.readFileSync('./config.json'));
 // Module
 const { Telegraf } = require('telegraf');
