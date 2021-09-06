@@ -1,0 +1,17 @@
+{
+  "name": "translate-bot-telegram",
+  "version": "1.0.0",
+  "description": "Translate Bot Telegram",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Franky404",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.3",
+    "node-telegram-bot-api": "^0.54.0",
+    "telegraf": "^4.4.1",
+    "telegraf-session-local": "2.1.0"
+  }
+}
