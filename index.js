@@ -73,7 +73,7 @@ bot.on('message', ctx => {
   const lang =
     (ctx.session.from ? ctx.session.from + '-' : '') + (ctx.session.to || 'en');
   console.log(lang);
-translate(`${ctx.message.text}`,{to:`${lang}`).then( res => {
+translate(`${ctx.message.text}`,{to:`${lang}`}).then( res => {
      const translation = res.text
       ctx.reply(translation);
       if (ctx.session.dnt === true) {
