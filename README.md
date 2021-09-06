@@ -34,7 +34,3 @@ $ npm i
 ```
 npm start
 ```
-Or
-```
-node index.js
-```
