@@ -5,6 +5,7 @@
 //==============================================//
 // Module
 const { Telegraf } = require('telegraf');
+const fs = require('fs')
 const config = JSON.parse(fs.readFileSync('./config.json'))
 const bot = new Telegraf(config.TELEGRAM_BOT_TOKEN);
 const translate = require('@vitalets/google-translate-api')
