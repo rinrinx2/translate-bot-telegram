@@ -17,6 +17,7 @@
 | **Git** | [Click Here](https://git-scm.com/download/win) |
 ```Windows
 $ git clone https://github.com/Franky404/translate-bot-telegram
+$ cd translate-bot-telegram
 $ npm i
 ```
 
@@ -27,6 +28,7 @@ $ apt update && apt upgrade
 $ apt install git
 $ apt install nodejs
 $ git clone https://github.com/Franky404/translate-bot-telegram
+$ cd translate-bot-telegram
 $ npm i
 ```
 # Heroku
